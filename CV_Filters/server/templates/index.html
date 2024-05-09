@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Css -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <!-- JS -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+    <title>Filtering and Edge Detection</title>
+</head>
+
+
+<body>
+    <div class="container">
+        <div id="imgsection">
+            <label for="image_input1" class="import-btn">
+                <i class="fa fa-cloud-upload"></i> Upload image
+            </label>
+            <div class="section-container">
+                <form id="upload-image1-form" method="post" enctype="multipart/form-data">
+                    <input id="image_input1" type="file" name="Image_File1" accept="image/jpeg, image/png, image/jpg"></input>
+                    <div class="a">
+                        <h3>Original</h3>
+                        <div class = "image" id="display_image1"></div>
+                    </div>
+                    <div class="a">
+                        <h3>Filtered</h3>
+                        <div class = "image" id="output"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="filters">
+            <div id="noise">
+                <label for="standard-select">Add Noise</label>
+                <div class="select">
+                <select id="noiseType">
+                    <option value="None">None</option>
+                    <option value="Uniform"> Uniform</option>
+                    <option value="Gaussian">Gaussian</option>
+                    <option value="salt">salt & pepper</option>
+                </select>
+                </div>
+            </div>
+            <div id="smoothing">
+                <label for="standard-select">Add Smooth filter</label>
+                <div class="select">
+                <select id="smoothingType">
+                    <option value="None">None</option>
+                    <option value="Average"> Average</option>
+                    <option value="Median">Median</option>
+                    <option value="Gaussian">Gaussian</option>
+                </select>
+                </div>
+            </div>
+            <div id="Edge">
+                <label for="standard-select">Edge Detection filter</label>
+                <div class="select">
+                <select id="edgeType">
+                    <option value="None">None</option>
+                    <option value="Sobel">Sobel</option>
+                    <option value="Robert">Robert</option>
+                    <option value="Prewitt">Prewitt</option>
+                    <option value="Canny">Canny</option>
+                </select>
+                </div>
+            </div>
+            <div id="freqfilter">
+                <label for="standard-select">Frequency domain filters</label>
+                <div class="select">
+                <select id="freq">
+                    <option value="None">None</option>
+                    <option value="low"> Low pass filter</option>
+                    <option value="high">High pass filter</option>
+                </select>
+                </div>
+            </div>            
+            
+            
+        </div>
+        <div id="equalization">
+           
+            <div class="a">
+                <h3>  Equalization</h3>
+                <div class = "image" id="equalizationimg"></div>
+            </div>
+            <div class="a">
+                <h3>Normalization</h3>
+                <div class = "image" id="normalizationimg"></div>
+            </div>
+        </div>
+
+        <div id="thresh">
+           
+            <div class="a">
+                <h3>  Global Thresholding</h3>
+                <div class = "image" id="global"></div>
+            </div>
+            <div class="a">
+                <h3>Local Thresholding</h3>
+                <div class = "image" id="local"></div>
+            </div>
+        </div>
+
+        <div id="hybrid">
+            <label for="hybrid_img1" class="import-btn2">
+                <i class="fa fa-cloud-upload"></i> Upload first image 
+            </label>
+            <label for="hybrid_img2" class="import-btn2">
+                <i class="fa fa-cloud-upload"></i> Upload second image 
+            </label>
+            <div class="section-container">
+                <form id="upload-image2-form" method="post" enctype="multipart/form-data">
+                    <input id="hybrid_img1" type="file" name="hybrid_img1" accept="image/jpeg, image/png, image/jpg"></input>
+                    <!-- <input id="hybrid_img2" type="file" name="hybrid_img2" accept="image/jpeg, image/png, image/jpg"></input> -->
+                    <div class="a">
+                        <h3>Image 1</h3>
+                        <div class = "image" id="hybrid_image1"></div>
+                    </div>
+                    <div class="a">
+                        <h3>Image 2</h3>
+                        <div class = "image" id="hybrid_image2"></div>
+                    </div>
+                    <div class="a">
+                        <h3>Hybrid Image</h3>
+                        <div class = "image" id="hybrid_output"></div>
+                    </div>
+                </form>
+                <form id="upload-image3-form" method="post" enctype="multipart/form-data">
+                    <input id="hybrid_img2" type="file" name="hybrid_img2" accept="image/jpeg, image/png, image/jpg"></input></form>
+            </div>
+        </div>
+
+
+    </div>
+
+    
+    <div class="plotting">
+        <div class="histogram">
+            <div class="a">
+                <h3>Histogram</h3>
+                <div class = "image2" id="histo"></div>
+            </div>
+            <div class="a">
+                <h3>Distribution Curve</h3>
+                <div class = "image2" id="cum_dist"></div>
+            </div>
+        </div>
+        
+        <div class="rgb">
+            <div>
+                <div class="a">
+                    <h3>RGB Histogram and Distribution Curve</h3>
+                    <div class = "image3" id="rgbpath2"></div>
+                </div>
+            </div>
+            <div class="small_container">
+                <div>
+                    <div class = "image2" id="rgbpath1"></div>
+                </div>
+                <div class = "image2" id="rgbpath"></div>
+                
+            </div>
+        </div>
+    </div>
+       
+    
+    <script src="../static/js/main.js"></script>
+</body>
+</html>

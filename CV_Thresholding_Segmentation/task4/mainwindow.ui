@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1520</width>
+    <height>990</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+  background-color: rgb(238, 238, 238);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+  background-color: rgb(238, 238, 238);
+}</string>
+   </property>
+   <widget class="QLabel" name="output_image">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>190</y>
+      <width>460</width>
+      <height>420</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-left: 2px solid rgb(0, 0, 127);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="kmean">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>410</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius: 20px;
+    background-color: rgb(0, 0, 90);
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+
+QPushButton::hover {
+background-color: white;
+color: rgb(0, 0, 90);
+}</string>
+    </property>
+    <property name="text">
+     <string>K-means</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="uploaded_image">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>190</y>
+      <width>460</width>
+      <height>420</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-left: 2px solid rgb(0, 0, 127);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="upload_label">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>60</y>
+      <width>271</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-bottom: 2px solid rgb(0, 0, 127);
+
+</string>
+    </property>
+    <property name="text">
+     <string>Uploaded Image</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="filter_label">
+    <property name="geometry">
+     <rect>
+      <x>1090</x>
+      <y>60</y>
+      <width>271</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-bottom: 2px solid rgb(0, 0, 127);
+
+</string>
+    </property>
+    <property name="text">
+     <string>Output Image</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="optimal_thresh">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>170</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius: 20px;
+    background-color: rgb(0, 0, 90);
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+QPushButton::pressed {
+ background-color: white;
+color: rgb(0, 0, 90);
+}
+
+QPushButton::hover {
+background-color: white;
+color: rgb(0, 0, 90);
+}</string>
+    </property>
+    <property name="text">
+     <string>Optimal Thresholding</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="otsu">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>230</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius: 20px;
+    background-color: rgb(0, 0, 90);
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+
+QPushButton::hover {
+background-color: white;
+color: rgb(0, 0, 90);
+}</string>
+    </property>
+    <property name="text">
+     <string>Otsu</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="spect_thresh">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>290</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius: 20px;
+    background-color: rgb(0, 0, 90);
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+
+QPushButton::hover {
+background-color: white;
+color: rgb(0, 0, 90);
+}</string>
+    </property>
+    <property name="text">
+     <string>Spectral Thresholding</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="spect_local_thresh">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>350</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius: 20px;
+    background-color: rgb(0, 0, 90);
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+
+QPushButton::hover {
+background-color: white;
+color: rgb(0, 0, 90);
+}</string>
+    </property>
+    <property name="text">
+     <string>Spectral Local Thresholding</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="regiongrowing">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>470</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius: 20px;
+    background-color: rgb(0, 0, 90);
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+
+QPushButton::hover {
+background-color: white;
+color: rgb(0, 0, 90);
+}</string>
+    </property>
+    <property name="text">
+     <string>Region Growing</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="agglo">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>530</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius: 20px;
+    background-color: rgb(0, 0, 90);
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+
+QPushButton::hover {
+background-color: white;
+color: rgb(0, 0, 90);
+}</string>
+    </property>
+    <property name="text">
+     <string>Agglomerative</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="meanshift">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>590</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius: 20px;
+    background-color: rgb(0, 0, 90);
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+
+QPushButton::hover {
+background-color: white;
+color: rgb(0, 0, 90);
+}</string>
+    </property>
+    <property name="text">
+     <string>Mean Shift</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="uploadimage">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>40</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius: 20px;
+    background-color: rgb(0, 0, 90);
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+
+QPushButton::hover {
+background-color: white;
+color: rgb(0, 0, 90);
+}</string>
+    </property>
+    <property name="text">
+     <string>Upload Image</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
